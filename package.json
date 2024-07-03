@@ -16,7 +16,8 @@
     "postinstall": "prisma generate",
     "lint": "next lint",
     "start": "next start",
-    "pages:build": "npx @cloudflare/next-on-pages"
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "optimize-images": "imagemin 'src/assets/*.{jpg,png}' --out-dir='src/assets' --plugin=imagemin-mozjpeg --plugin=imagemin-pngquant"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^1.6.0",
@@ -35,6 +36,10 @@
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.0",
     "geist": "^1.3.0",
+    "imagemin": "^9.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-webp": "^8.0.0",
     "next": "^14.2.1",
     "next-auth": "^5.0.0-beta.19",
     "node-cron": "^3.0.3",
@@ -69,5 +74,4 @@
     "initVersion": "7.34.0"
   },
   "packageManager": "npm@10.1.0"
-
 }
