@@ -34,7 +34,7 @@ export const Hero: React.FC = () => {
         <div className="hero home-hero">
             <div>
                 <p className="heading">
-                    Join Us In Making A Difference 2
+                    Join Us In Making A Difference
                 </p>
                 <p className="subheading">
                     Together, We Can Create a Brighter Future for Communities in Need
