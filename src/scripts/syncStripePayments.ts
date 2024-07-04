@@ -13,6 +13,8 @@ export const syncStripePayments = async () => {
             limit: 100,
             starting_after: startingAfter,
           });
+
+        //   console.log({data: paymentIntents.data})
     
           for (const intent of paymentIntents.data) {
             const metadata = intent.metadata || {};
@@ -25,6 +27,7 @@ export const syncStripePayments = async () => {
             const status = intent.status;
 
             if (!frequency) {continue}
+            console.log({intent})
     
             // Check if donation already exists in the database
             const existingOneDonation = await db.oneTimeDonation.findUnique({

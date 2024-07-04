@@ -51,9 +51,11 @@ export async function POST(req: NextRequest) {
                 status,
                 message,
                 // userId,
-                user: anonymous ? undefined : { connect: { id: userId!, email: "" } }, // Use the relation to connect the user
+                user: anonymous ? undefined : { connect: { id: userId! } }, // Use the relation to connect the user
                 anonymous,
             };
+
+            // console.log({commonData, user: commonData})
 
             if (frequency === 'onetime') {
                 // Handle one-time donation
