@@ -96,7 +96,8 @@
     min-height: 100vh;
 }
 
-.primary-value, .primary-value-2 {
+.primary-value,
+.primary-value-2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,7 +106,8 @@
     margin: 20px 0;
 }
 
-.text-wrapper-22, .text-wrapper-18 {
+.text-wrapper-22,
+.text-wrapper-18 {
     color: white;
     font-family: "Urbanist-SemiBold", Helvetica;
     font-size: 40px;
@@ -230,45 +232,45 @@
 .pricing-section {
     text-align: center;
     padding: 50px 0;
-  }
-  
-  .pricing-header {
+}
+
+.pricing-header {
     margin-bottom: 30px;
-  }
-  
-  .pricing-title {
+}
+
+.pricing-title {
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 20px;
-  }
-  
-  .pricing-toggle {
+}
+
+.pricing-toggle {
     display: flex;
     justify-content: center;
     gap: 10px;
-  }
-  
-  .toggle-button {
+}
+
+.toggle-button {
     background: none;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
-  }
-  
-  .toggle-button.active {
+}
+
+.toggle-button.active {
     background-color: #125088;
     color: #fff;
     border-color: #125088;
-  }
-  
-  .pricing-cards {
+}
+
+.pricing-cards {
     display: flex;
     justify-content: center;
     gap: 20px;
-  }
-  
-  .pricing-card {
+}
+
+.pricing-card {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -276,48 +278,48 @@
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
-  }
-  
-  .pricing-card.highlighted {
+}
+
+.pricing-card.highlighted {
     border-color: #125088;
     background-color: #faf5e4;
-  }
-  
-  .pricing-plan {
+}
+
+.pricing-plan {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 10px;
-  }
-  
-  .pricing-amount {
+}
+
+.pricing-amount {
     font-size: 36px;
     font-weight: 700;
     color: #125088;
     margin-bottom: 5px;
-  }
-  
-  .pricing-period {
+}
+
+.pricing-period {
     font-size: 16px;
     color: #555;
     margin-bottom: 20px;
-  }
-  
-  .divider {
+}
+
+.divider {
     border: none;
     border-top: 1px solid #ddd;
     margin: 20px 0;
-  }
-  
-  .features-list {
+}
+
+.features-list {
     list-style: none;
     padding: 0;
-  }
-  
-  .feature-item {
+}
+
+.feature-item {
     font-size: 18px;
     margin: 10px 0;
-  }
-  
+}
+
 /* review */
 
 .review {
@@ -446,36 +448,57 @@
 .charity-landing-page .faq {
     width: 100%;
     padding: 20px;
-  }
-  
-  .charity-landing-page .faq-title {
+}
+
+.charity-landing-page .faq-head {
+    display: inline;
     text-align: center;
+}
+
+.charity-landing-page .faq-title {
+    text-align: center;
+    display: inline-flex;
     font-family: "Urbanist-SemiBold", Helvetica;
     font-size: 40px;
     font-weight: 600;
     color: var(--text);
     margin-bottom: 20px;
-  }
-  
-  .charity-landing-page .faq-content {
+}
+.primary-button {
+    align-items: right;
+    border-radius: 5px;
+    display: inline-flex;
+    justify-content: center;
+    padding: 20px 35px;
+    font-family: "Quicksand-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #125088;
+    color: #faf5e4;
+}
+
+.charity-landing-page .faq-content {
     display: flex;
     flex-direction: column;
     gap: 10px;
-  }
-  
-  .charity-landing-page .faq-item {
+}
+
+.charity-landing-page .faq-item {
     background-color: #faf5e4;
     border-radius: 10px;
     padding: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-  }
-  
-  .charity-landing-page .faq-item:hover {
+}
+
+.charity-landing-page .faq-item:hover {
     background-color: #f0e8d9;
-  }
-  
-  .charity-landing-page .faq-question {
+}
+
+.charity-landing-page .faq-question {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -483,9 +506,9 @@
     font-size: 20px;
     font-weight: 500;
     color: var(--text);
-  }
-  
-  .charity-landing-page .faq-answer {
+}
+
+.charity-landing-page .faq-answer {
     margin-top: 10px;
     padding-top: 10px;
     border-top: 1px solid #dcdcdc;
@@ -494,15 +517,14 @@
     color: var(--text);
     /* background: var(--Primary, #125B50); */
     /* opacity: 0.04; */
-  }
-  
-  .charity-landing-page .faq-arrow {
+}
+
+.charity-landing-page .faq-arrow {
     width: 20px;
     height: 20px;
     transition: transform 0.3s ease;
-  }
-  
-  .charity-landing-page .faq-arrow[alt="Arrow up"] {
+}
+
+.charity-landing-page .faq-arrow[alt="Arrow up"] {
     transform: rotate(180deg);
-  }
-  
+}

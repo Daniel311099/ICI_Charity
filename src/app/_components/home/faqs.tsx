@@ -1,4 +1,5 @@
 // components/FAQ.tsx
+import Link from "next/link";
 import React, { useMemo, useState } from "react";
 import { api } from "~/trpc/react";
 
@@ -32,6 +33,8 @@ const down = (
     </svg>
 );
 
+const HOME = 3;
+
 export const FAQ: React.FC<{ n: number }> = ({ n }) => {
     const [open, setOpen] = useState<number | null>(1);
 
@@ -47,7 +50,20 @@ export const FAQ: React.FC<{ n: number }> = ({ n }) => {
 
     return (
         <div className="faq">
-            <h2 className="faq-title">Frequently Asked Questions (FAQ)</h2>
+            <div className="faq-head">
+                <div>
+                    <h2 className="faq-title">
+                        Frequently Asked Questions (FAQ)
+                    </h2>
+                </div>
+                {HOME === n && (
+                    <div>
+                        <Link href={"/faqs"}>
+                            <div className="primary-button">See More</div>
+                        </Link>
+                    </div>
+                )}
+            </div>
             <div className="faq-content">
                 {faqs.map((faq, idx) => {
                     return (

@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect } from "react";
-import "~/styles/hero.css"
+import "~/styles/hero.css";
 import header from "../../../assets/Header.png";
+import Link from "next/link";
 
 // export const Hero: React.FC = () => {
 
@@ -31,22 +32,49 @@ import header from "../../../assets/Header.png";
 
 export const Hero: React.FC = () => {
     return (
-        <div className="hero home-hero">
-            <div>
-                <p className="heading">
-                    Join Us In Making A Difference
-                </p>
-                <p className="subheading">
-                    Together, We Can Create a Brighter Future for Communities in Need
-                </p>
-                <div className="buttons">
-                    <div className="primary-button">Donate Now!</div>
-                    <div className="secondary-button">Learn More</div>
+        <div className="hero-wrap">
+            {/* <h1 className="logo-text">Icon House International</h1> */}
+            <Title />
+            <div className="hero home-hero">
+                <div>
+                    <p className="heading">Join Us In Making A Difference</p>
+                    <p className="subheading">
+                        Together, We Can Create a Brighter Future for
+                        Communities in Need
+                    </p>
+                    <div className="buttons">
+                        <Link href={"/donate"}>
+                            <div className="primary-button">Donate Now</div>
+                        </Link>
+                        <Link href={"/aboutUs"}>
+                            <div className="secondary-button">Learn More</div>
+                        </Link>
+                    </div>
                 </div>
-            </div>
-            <div className="hero-image-container">
-                <img src={header.src} alt="Hero Image" className="hero-image" />
+                <div className="hero-image-container">
+                    <img
+                        src={header.src}
+                        alt="Hero Image"
+                        className="hero-image"
+                    />
+                </div>
             </div>
         </div>
     );
 };
+
+export function Title() {
+    const title = "Icon House International";
+    return (
+        <h1 className="logo-text">
+            {title.split(" ").map((word) => {
+                return (
+                    <>
+                        <span className="red-letter">{word[0]}</span>
+                        {word.slice(1)}&nbsp;
+                    </>
+                );
+            })}
+        </h1>
+    );
+}

@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { getServerAuthSession } from "~/server/auth";
 import "~/styles/header.css";
-import logo from "../../assets/Logo.png"
+import logo from "../../assets/Logo.png";
 import { Filler } from "./Filler";
 
 export function Header({ children }: { children: React.ReactNode }) {
@@ -21,26 +21,28 @@ export function Header({ children }: { children: React.ReactNode }) {
     // children is the hero
 
     const navHeight = 60; // Adjust based on your nav bar height
-    const heroHeight = 200
+    const heroHeight = 180;
     return (
         <div className="header-container">
             <nav className="navigation-menu">
-                <div className="logo-container">
-                    <Link href={"/"}>
-                        <img src={logo.src} alt="Logo" className="logo" />
-                    </Link>
+                <div className="row1">
+                    <div className="logo-container">
+                        <Link href={"/"}>
+                            <img src={logo.src} alt="Logo" className="logo" />
+                        </Link>
+                    </div>
+                    <div className="navbar-container">
+                        {links.map((link) => (
+                            <div key={link.url} className="nav-link">
+                                <Link href={link.url}>{link.name}</Link>
+                            </div>
+                        ))}
+                    </div>
+                    <AuthButtons />
                 </div>
-                <div className="navbar-container">
-                    {links.map((link) => (
-                        <div key={link.url} className="nav-link">
-                            <Link href={link.url}>{link.name}</Link>
-                        </div>
-                    ))}
-                </div>
-                <AuthButtons />
             </nav>
             <Filler navHeight={navHeight} heroHeight={heroHeight} />
-            {children} 
+            {children}
         </div>
     );
 }

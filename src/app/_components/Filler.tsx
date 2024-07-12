@@ -10,7 +10,7 @@ export const Filler = ({ navHeight, heroHeight }: {navHeight: number, heroHeight
         const updateFillHeight = () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const fillerHeight = Math.max(0, heroHeight - scrollTop);
-            setFillHeight(fillerHeight);
+            setFillHeight(fillerHeight +navHeight);
         };
 
         window.addEventListener('scroll', updateFillHeight);

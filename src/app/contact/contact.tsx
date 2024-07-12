@@ -123,7 +123,7 @@ export function Contact() {
             logo: address,
         },
         { icon: "fas fa-phone-alt", text: "Phone Number", logo: phone },
-        { icon: "fas fa-envelope", text: "Email", logo: email },
+        { icon: "fas fa-envelope", text: "info@iconhouseinternational.com", logo: email },
     ];
     return (
         <div className="contact-container">

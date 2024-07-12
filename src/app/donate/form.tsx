@@ -41,8 +41,9 @@ export const DonateForm: React.FC = () => {
         e: React.ChangeEvent<HTMLInputElement>
     ) => {
         const value = e.target.value;
+        console.log({value})
         const valid = /^[0-9]+(\.[0-9]{0,2})?$/.test(value) || "";
-        if (valid) {
+        if (valid || !value) {
             setSelectedAmount("");
             setCustomAmount(value);
         }

@@ -20,7 +20,7 @@ export const sections = [
             },
             {
                 title: "Mission",
-                content: "To solve priority challenges and elevate the health and life experiences of people with disabilities, fostering an environment of growth, inclusion, and empowerment.",
+                content: "To support priority challenges and elevate the health and life experiences of people with disabilities, fostering an environment of growth, inclusion, and empowerment.",
             }
         ]
     },

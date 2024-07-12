@@ -44,7 +44,19 @@
     width: 100%;
     z-index: 10;
     background-color: #faf5e4;
+    /* display: inline-block; */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row1 {
     display: flex;
+    /* position: fixed; */
+    /* top: 0px; */
+    width: 100%;
+    z-index: 10;
+    background-color: #faf5e4;
+    /* display: inline-block; */
     align-items: center;
     justify-content: space-between;
 }
@@ -125,16 +137,34 @@
 }
 
 .logo-container {
-    display: flex;
+    /* display: block; */
     align-items: center;
+    margin-left: 60px;
+    margin-top: 20px;
 }
 
+.logo-text {
+    text-align: center;
+    right: 50px !important;
+    /* display: block; */
+    position: relative;
+    font-family: Arial, sans-serif;
+    font-size: 48px;
+    width: 100%;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+}
+.red-letter {
+    color: #FF0000;
+}
 .logo {
-    max-height: 50px; /* Adjust as needed */
+    max-height: 75px; /* Adjust as needed */
     max-width: 100%;
     height: auto;
     width: auto;
     margin-right: 20px; /* Adjust as needed */
+    justify-content: center;
 }
 
 .logo:hover {
@@ -207,7 +237,7 @@
 .fill-gap {
     background-color: #faf5e4;
     position: fixed;
-    top: 40px; 
+    top: 90px; 
     left: 0;
     width: 100%;
     z-index: 0; /* Ensure it is below the nav but above other content */

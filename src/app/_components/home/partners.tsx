@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 import React from "react";
 import "~/styles/home.css";
 
@@ -33,9 +33,11 @@ export const Partners: React.FC = () => {
             <p className="partners-subtitle">
                 Here Are Some Of Our Top Partners
             </p>
-            <div className="partners-button-container">
-                <div className="button-text">See All</div>
-            </div>
+            <Link href={"/partners"}>
+                <div className="partners-button-container">
+                    <div className="button-text">See All</div>
+                </div>
+            </Link>
             <div className="partners-logo-container">
                 {/* Replace with actual logo images */}
                 <img src="/path/to/asana-logo.png" alt="Asana" />
