@@ -69,7 +69,7 @@ function AuthButtons() {
                     >
                         <div className="text-content">Login</div>
                     </Link>
-                    <Link href="/signup" className="button-frame signup-frame">
+                    <Link href="/lo/api/auth/signin" className="button-frame signup-frame">
                         <div className="text-content">Signup</div>
                     </Link>
                 </>
