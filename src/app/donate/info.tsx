@@ -1,6 +1,6 @@
 import React from "react";
 import "~/styles/donate.css";
-import image from "../../assets/Header.png"
+import image from "../../assets/Donate.png"
 
 export const DonateIntro: React.FC = () => {
     return (

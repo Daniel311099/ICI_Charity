@@ -60,8 +60,9 @@ const ContactForm: React.FC = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (validate()) {
-            alert('Message sent!');
+            // alert('Message sent!');
             // handle actual form submission here
+            console.log({formData})
         }
     };
 

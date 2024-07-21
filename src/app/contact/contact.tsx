@@ -119,10 +119,10 @@ export function Contact() {
     const contactDetails = [
         {
             icon: "fas fa-map-marker-alt",
-            text: <>Address Line 1<br/>Line 2</>,
+            text: <>34-146 Curtain Road<br/>London EC2A 3AR</>,
             logo: address,
         },
-        { icon: "fas fa-phone-alt", text: "Phone Number", logo: phone },
+        { icon: "fas fa-phone-alt", text: "07495785217", logo: phone },
         { icon: "fas fa-envelope", text: "info@iconhouseinternational.com", logo: email },
     ];
     return (

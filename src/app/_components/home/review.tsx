@@ -1,37 +1,81 @@
 // components/Review.tsx
 import React, { useMemo, useState } from "react";
 import star from "~/assets/Star.png"
+import profile from "~/assets/Profile.png"
 
-export const testimonials = [
+// export const testimonials = [
+//     {
+//         id: 0,
+//         name: "John Doe",
+//         username: "JD1",
+//         content: "This charity has changed my life.",
+//         date: new Date("2023-01-01"),
+//         rating: 3,
+//     },
+//     {
+//         id: 1,
+//         name: "Jane Smith",
+//         username: "JS1",
+//         content: "I am so grateful for the support.",
+//         date: new Date("2023-02-01"),
+//         rating: 4,
+//     },
+//     {
+//         id: 2,
+//         name: "Jane Doe",
+//         username: "JD2",
+//         content: "This charity has changed my life again.",
+//         date: new Date("2023-01-01"),
+//         rating: 5,
+//     },
+//     // Add more testimonials as needed
+// ] as const;
+
+const testimonials = [
     {
         id: 0,
-        name: "John Doe",
-        username: "JD1",
-        content: "This charity has changed my life.",
-        date: new Date("2023-01-01"),
-        rating: 3,
+        name: 'Uche',
+        content: 'If only IHI was around during my university days, my journey would have been different. Thanks for making me aware of other opportunities to explore.',
+        date: new Date('2024-02-15'),
+        rating: 5,
+        username: 'uche_scholar'
     },
     {
         id: 1,
-        name: "Jane Smith",
-        username: "JS1",
-        content: "I am so grateful for the support.",
-        date: new Date("2023-02-01"),
+        name: 'Simon',
+        content: 'Thank you IHI for giving me a shoulder to lean on.',
+        date: new Date('2024-03-10'),
         rating: 4,
+        username: 'simon_hopeful'
     },
     {
         id: 2,
-        name: "Jane Doe",
-        username: "JD2",
-        content: "This charity has changed my life again.",
-        date: new Date("2023-01-01"),
+        name: 'Ola James',
+        content: 'The missing jigsaw in my life has been found by IHI. Thanks for representing people like me.',
+        date: new Date('2024-05-18'),
         rating: 5,
+        username: 'ola_jigsaw'
     },
-    // Add more testimonials as needed
-] as const;
+    {
+        id: 3,
+        name: 'Gary Skyner',
+        content: 'Icon House International is one of a kind. Thank you for lending a hand.',
+        date: new Date('2024-04-25'),
+        rating: 5,
+        username: 'gary_sky'
+    },
+    {
+        id: 4,
+        name: 'Gabriel O',
+        content: 'I wish Icon House International would grow beyond UK shores because people like me need IHI\'s support all over the world. Thank you.',
+        date: new Date('2024-06-30'),
+        rating: 4,
+        username: 'gabriel_globe'
+    }
+]
 
 export const Review: React.FC = () => {
-    const [activeId, setActiveId] = useState(1);
+    const [activeId, setActiveId] = useState(2);
     const active = useMemo(() => {
         return testimonials.find((t) => t.id === activeId)
     }, [activeId]);
@@ -52,7 +96,7 @@ export const Review: React.FC = () => {
                         <img
                             className="profile-pic"
                             alt="Profile"
-                            src="ellipse-5.png"
+                            src={profile.src}
                         />
                         <div>
                             <h3>{active.name}</h3>

@@ -135,6 +135,7 @@ export const Footer: React.FC = () => {
                                 <span className="icon linkedin"></span>
                             </div>
                         </div>
+                        <div className="footer-section"></div>
                         <div className="footer-section foundation">
                             <h4>Foundation</h4>
                             <div className="section-full">

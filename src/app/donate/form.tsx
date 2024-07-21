@@ -1,5 +1,5 @@
-"use client"
-import React, { useState } from "react";
+"use client";
+import React, { useMemo, useState } from "react";
 import { useSession, signIn } from "next-auth/react";
 import "~/styles/donate.css";
 import { api } from "~/trpc/react";
@@ -13,7 +13,6 @@ const currencies = [
 
 const donationAmounts = [5, 10, 15];
 
-
 export const DonateForm: React.FC = () => {
     const { data: session } = useSession();
     const [selectedAmount, setSelectedAmount] = useState<string>("");
@@ -23,6 +22,32 @@ export const DonateForm: React.FC = () => {
     const [isAnonymous, setIsAnonymous] = useState<boolean>(false);
     const [currency, setCurrency] = useState<string>("GBP");
     const [message, setMessage] = useState<string>("");
+
+    const frequencies = useMemo(() => {
+        if (isAnonymous) {
+            return [
+                {
+                    freq: "monthly",
+                    checked: false,
+                },
+                {
+                    freq: "yearly",
+                    checked: false,
+                },
+                {
+                    freq: "onetime",
+                    checked: true,
+                },
+            ];
+        } else {
+            return ["monthly", "yearly", "onetime"].map((freq) => {
+                return {
+                    freq,
+                    checked: freq === selectedFrequency,
+                };
+            });
+        }
+    }, [selectedFrequency, isAnonymous]);
 
     const handleAmountChange = (value: string) => {
         setSelectedAmount(value);
@@ -35,13 +60,16 @@ export const DonateForm: React.FC = () => {
 
     const handleAnonymousChange = () => {
         setIsAnonymous(!isAnonymous);
+        if (isAnonymous) {
+            setSelectedFrequency((e) => "onetime");
+        }
     };
 
     const handleCustomAmountChange = (
         e: React.ChangeEvent<HTMLInputElement>
     ) => {
         const value = e.target.value;
-        console.log({value})
+        console.log({ value });
         const valid = /^[0-9]+(\.[0-9]{0,2})?$/.test(value) || "";
         if (valid || !value) {
             setSelectedAmount("");
@@ -81,8 +109,12 @@ export const DonateForm: React.FC = () => {
     //     }
     // };
 
-    const oneTimeCheckoutSession = api.checkout.createOneTimeCheckoutSession.useMutation();
-    const subscriptionCheckoutSession = api.checkout.createSubscriptionCheckoutSession.useMutation();
+    const oneTimeCheckoutSession =
+        api.checkout.createOneTimeCheckoutSession.useMutation();
+    const oneTimeAnonCheckoutSession =
+        api.checkout.createAnonOneTimeCheckoutSession.useMutation();
+    const subscriptionCheckoutSession =
+        api.checkout.createSubscriptionCheckoutSession.useMutation();
 
     const handleCheckout = async () => {
         if (!session && !isAnonymous) {
@@ -94,33 +126,36 @@ export const DonateForm: React.FC = () => {
             ? parseFloat(customAmount)
             : parseFloat(selectedAmount);
 
-            const isSubscription = selectedFrequency === 'monthly' || selectedFrequency === 'yearly';
+        const isSubscription =
+            selectedFrequency === "monthly" || selectedFrequency === "yearly";
 
-            if (isSubscription) {
-                const response = await subscriptionCheckoutSession.mutateAsync({
-                    amount,
-                    currency,
-                    frequency: selectedFrequency,
-                    anonymous: isAnonymous,
-                    message,
-                });
-        
-                if (response.url) {
-                    window.open(response.url, '_blank');
-                }
-            } else {
-                const response = await oneTimeCheckoutSession.mutateAsync({
-                    amount,
-                    currency,
-                    anonymous: isAnonymous,
-                    message,
-                });
-        
-                if (response.url) {
-                    window.open(response.url, '_blank');
-                }
+        if (isSubscription) {
+            const response = await subscriptionCheckoutSession.mutateAsync({
+                amount,
+                currency,
+                frequency: selectedFrequency,
+                anonymous: isAnonymous,
+                message,
+            });
+
+            if (response.url) {
+                window.open(response.url, "_blank");
             }
+        } else {
+            const checkoutMutation = isAnonymous
+                ? oneTimeAnonCheckoutSession
+                : oneTimeCheckoutSession;
+            const response = await checkoutMutation.mutateAsync({
+                amount,
+                currency,
+                anonymous: isAnonymous,
+                message,
+            });
 
+            if (response.url) {
+                window.open(response.url, "_blank");
+            }
+        }
     };
 
     return (
@@ -167,7 +202,7 @@ export const DonateForm: React.FC = () => {
                         {amount}
                     </label>
                 ))}
-                <div style={{display: "flex"}}>
+                <div style={{ display: "flex" }}>
                     {/* {getCurrencySymbol()} */}
                     <input
                         type="number"
@@ -181,26 +216,26 @@ export const DonateForm: React.FC = () => {
             <fieldset className="donation-frequency">
                 <legend>Choose a donation frequency</legend>
                 <div className="radio-buttons">
-                    {["monthly", "yearly", "onetime"].map((frequency) => (
+                    {frequencies.map((frequency) => (
                         <label
-                            key={frequency}
+                            key={frequency.freq}
                             className={`radio-label ${
-                                selectedFrequency === frequency
-                                    ? "selected"
-                                    : ""
+                                frequency.checked ? "selected" : ""
                             }`}
-                            onClick={() => handleFrequencyChange(frequency)}
+                            onClick={() =>
+                                handleFrequencyChange(frequency.freq)
+                            }
                         >
                             <input
                                 type="radio"
                                 name="frequency"
-                                value={frequency}
+                                value={frequency.freq}
                                 className="radio-input"
-                                checked={selectedFrequency === frequency}
+                                checked={frequency.checked}
                                 readOnly
                             />
-                            {frequency.charAt(0).toUpperCase() +
-                                frequency.slice(1)}
+                            {frequency.freq.charAt(0).toUpperCase() +
+                                frequency.freq.slice(1)}
                         </label>
                     ))}
                 </div>
@@ -223,7 +258,9 @@ export const DonateForm: React.FC = () => {
                     id="message-input"
                     placeholder="Your message..."
                     value={message}
-                    onChange={e => {handleMessageChange(e)}}
+                    onChange={(e) => {
+                        handleMessageChange(e);
+                    }}
                     className="message-input"
                 ></textarea>
             </fieldset>
@@ -234,7 +271,7 @@ export const DonateForm: React.FC = () => {
                 {!session && !isAnonymous ? (
                     <>
                         <p className="login-required">
-                            You need to log in to proceed with the checkout.
+                        You need to log in to proceed with the checkout unless an anonymous donor.
                         </p>
                         <button
                             type="button"

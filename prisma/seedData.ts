@@ -88,10 +88,13 @@ export const partners = [
 ];
 
 export const testimonials = [
-    { name: 'John Doe', content: 'This charity has changed my life.', date: new Date('2023-01-01') },
-    { name: 'Jane Smith', content: 'I am so grateful for the support.', date: new Date('2023-02-01') },
-    // Add more testimonials as needed
-];
+    { name: 'Uche', content: 'If only IHI was around during my university days, my journey would have been different. Thanks for making me aware of other opportunities to explore.', date: new Date('2024-01-15') },
+    { name: 'Simon', content: 'Thank you IHI for giving me a shoulder to lean on.', date: new Date('2024-03-22') },
+    { name: 'Ola James', content: 'The missing jigsaw in my life has been found by IHI. Thanks for representing people like me.', date: new Date('2024-02-10') },
+    { name: 'Gary Skyner', content: 'Icon House International is one of a kind. Thank you for lending a hand.', date: new Date('2024-05-05') },
+    { name: 'Gabriel O', content: 'I wish Icon House International would grow beyond UK shores because people like me need IHI\'s support all over the world. Thank you.', date: new Date('2024-04-18') },
+  ];
+  
 
 export const impacts = [
     { title: 'Empowering Local Communities', content: 'We provide essential resources and support to help local communities thrive.', iconUrl: 'https://example.com/icon1.png' },
