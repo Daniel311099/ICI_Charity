@@ -35,11 +35,14 @@ const FeedbackForm: React.FC = () => {
         return valid;
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        const { name, value, type} = e.target;
+        setFormData({ ...formData, message: value });
+    };
+    const handleCheckChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value, type, checked } = e.target;
         setFormData({ ...formData, [name]: type === 'checkbox' ? checked : value });
     };
-
     const handleRatingChange = (rating: number) => {
         setFormData({ ...formData, rating });
     };
@@ -71,7 +74,7 @@ const FeedbackForm: React.FC = () => {
                             type="checkbox"
                             name="anonymous"
                             checked={formData.anonymous}
-                            onChange={handleChange}
+                            onChange={handleCheckChange}
                         />
                         Submit anonymously
                     </label>
