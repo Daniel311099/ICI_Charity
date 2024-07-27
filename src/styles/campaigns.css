@@ -1,0 +1,113 @@
+/* src/styles/campaigns.css */
+
+.campaigns-page {
+    padding: 40px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.campaigns-page h1 {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.filters input,
+.filters select {
+    padding: 12px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filters input::placeholder {
+    color: #888;
+}
+
+.campaigns-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.campaign-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.campaign-card-reverse {
+    flex-direction: row-reverse;
+}
+
+.campaign-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.campaign-image-container {
+    flex: 1;
+    padding: 20px;
+}
+
+.campaign-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.campaign-card:hover .campaign-image {
+    transform: scale(1.05);
+}
+
+.campaign-details {
+    flex: 2;
+    padding: 20px;
+}
+
+.campaign-details-reverse {
+    text-align: right;
+}
+
+.campaign-title {
+    font-size: 28px;
+    color: #125088;
+    margin: 10px 0;
+}
+
+.campaign-description {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.campaign-link {
+    font-size: 18px;
+    color: #125088;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #125088;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.campaign-link:hover {
+    background-color: #125088;
+    color: #fff;
+}
