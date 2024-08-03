@@ -17,6 +17,7 @@ export const checkoutRouter = createTRPCRouter({
             message: z.string(),
         }))
         .mutation(async ({ input, ctx }) => {
+            console.log("Public")
             const { amount, currency, anonymous, message } = input;
             const userId = ctx.session?.user?.id || null;
             if (userId) {

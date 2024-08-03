@@ -60,7 +60,7 @@ export const DonateForm: React.FC = () => {
 
     const handleAnonymousChange = () => {
         setIsAnonymous(!isAnonymous);
-        if (isAnonymous) {
+        if (!isAnonymous) {
             setSelectedFrequency((e) => "onetime");
         }
     };
@@ -129,6 +129,7 @@ export const DonateForm: React.FC = () => {
         const isSubscription =
             selectedFrequency === "monthly" || selectedFrequency === "yearly";
 
+            console.log({isAnonymous, isSubscription, selectedFrequency})
         if (isSubscription) {
             const response = await subscriptionCheckoutSession.mutateAsync({
                 amount,
