@@ -44,7 +44,7 @@ export const checkoutRouter = createTRPCRouter({
                 ],
                 mode: 'payment',
                 success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success`,
-                cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/cancel`,
+                cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/donate`,
                 metadata: {
                     userId,
                     anonymous: anonymous.toString(),
@@ -89,7 +89,7 @@ export const checkoutRouter = createTRPCRouter({
                 ],
                 mode: 'payment',
                 success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success`,
-                cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/cancel`,
+                cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/donate`,
                 metadata: {
                     userId,
                     anonymous: anonymous.toString(),
@@ -142,7 +142,7 @@ export const checkoutRouter = createTRPCRouter({
                 ],
                 mode: 'subscription',
                 success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success`,
-                cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/cancel`,
+                cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/donate`,
                 metadata: {
                     userId,
                     anonymous: anonymous.toString(),

@@ -1,0 +1,80 @@
+.success-page {
+    padding: 20px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+}
+
+.checkmark-icon {
+    color: #28a745;
+    font-size: 48px;
+    margin-bottom: 20px;
+    width: 30px;
+    margin-top: 40px;
+}
+
+.success-title {
+    color: #191919;
+    font-family: "Urbanist-SemiBold", Helvetica;
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.success-subtitle {
+    color: #343434;
+    font-family: "Quicksand-Medium", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.success-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-family: "Quicksand-SemiBold", Helvetica;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.primary-button {
+    background-color: #125088;
+    color: #faf5e4;
+}
+
+.secondary-button {
+    background-color: transparent;
+    color: #125088;
+    border: 1px solid #125088;
+}
+
+.primary-button:hover {
+    background-color: #0f4074;
+}
+
+.secondary-button:hover {
+    background-color: #125088;
+}
+
+.success-details {
+    text-align: center;
+    font-family: "Quicksand-Medium", Helvetica;
+}
+
+.success-details p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
