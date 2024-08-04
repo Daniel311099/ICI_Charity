@@ -130,19 +130,33 @@
   
   .section__item {
     display: flex;
-    gap: 10px;
-    align-items: baseline;
-    justify-content: center; /* Centers the items horizontally */
-  }
-  
-  .section__item-title {
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section__item-title {
+    display: inline-block;
     font-weight: bold;
     font-size: 1.2rem;
-    color: #007bff;
-  }
-  
-  .section__item-content {
-    font-size: 1.2rem;
-    color: #555;
-  }
-  
+    color: #ffffff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Pointer cursor to indicate it's clickable */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+    margin-right: 20px; /* Add some space between button and text */
+    min-width: 150px; /* Fixed width to ensure all buttons are the same size */
+}
+
+.section__item-title:hover {
+    background-color: #0056b3; /* Darken the button color on hover */
+    box-shadow: 0 4px 8px rgba(0, 91, 187, 0.2); /* Add a subtle shadow effect */
+}
+
+.section__item-content {
+    flex: 1; /* This allows the content to take up the remaining space */
+    font-size: 16px;
+    color: #4A4A4A;
+}

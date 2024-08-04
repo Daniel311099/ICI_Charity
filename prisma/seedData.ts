@@ -16,11 +16,13 @@ export const sections = [
         content: [
             {
                 title: "About Us",
-                content: "Welcome to our charity – a beacon of hope and empowerment for people with disabilities across the United Kingdom. Our mission is simple yet profound, to create a more inclusive and equitable world where every individual, regardless of their abilities, can thrive.",
+                content: `Welcome to our charity – a beacon of hope and empowerment for people with disabilities across the United Kingdom. Our charity thrives on the dedication of diverse volunteers, each with unique life experiences. Together, we share a common mission: to empower and support individuals with disabilities.
+                Our team of professionals delivers tailored support services, including personalized support plans, counselling therapy, and life skills coaching. 
+                We’re committed to enhancing the lives of those we serve.`,
             },
             {
                 title: "Mission",
-                content: "To support priority challenges and elevate the health and life experiences of people with disabilities, fostering an environment of growth, inclusion, and empowerment.",
+                content: "Our mission is simple yet profound, to create a more inclusive and equitable world where every individual, regardless of their abilities, can thrive. To support priority challenges and elevate the health and life experiences of people with disabilities, fostering an environment of personal growth, inclusion, and empowerment.",
             }
         ]
     },
@@ -93,8 +95,8 @@ export const testimonials = [
     { name: 'Ola James', content: 'The missing jigsaw in my life has been found by IHI. Thanks for representing people like me.', date: new Date('2024-02-10') },
     { name: 'Gary Skyner', content: 'Icon House International is one of a kind. Thank you for lending a hand.', date: new Date('2024-05-05') },
     { name: 'Gabriel O', content: 'I wish Icon House International would grow beyond UK shores because people like me need IHI\'s support all over the world. Thank you.', date: new Date('2024-04-18') },
-  ];
-  
+];
+
 
 export const impacts = [
     { title: 'Empowering Local Communities', content: 'We provide essential resources and support to help local communities thrive.', iconUrl: 'https://example.com/icon1.png' },

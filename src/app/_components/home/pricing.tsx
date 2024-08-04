@@ -1,4 +1,5 @@
 // components/Pricing.tsx
+import Link from "next/link";
 import React, { useMemo, useState } from "react";
 
 enum frequency {
@@ -146,26 +147,28 @@ export const Pricing: React.FC = () => {
                 {option?.cards!.map((card) => {
                     console.log(card.tier, selectedTier)
                     return (
-                        <div
-                            key={card.tier}
-                            className={`pricing-card ${card.tier}${
-                                card.tier === selectedTier ? " highlighted" : ""
-                            }`}
-                            onClick={() => {setSelectedTier(card.tier)}}
-                        >
-                            <h3 className="pricing-plan">{card.tier}</h3>
-                            <div className="pricing-amount">£{card.value}</div>
-                            <div className="pricing-period">{option.unit}</div>
-                            <hr className="divider" />
-                            <span>{card.message}</span>
-                            <ul className="features-list">
-                                {/* {bronzeFeatures.map((feature, index) => (
-                                    <li key={index} className="feature-item">
-                                        ✔️ {feature}
-                                    </li>
-                                ))} */}
-                            </ul>
-                        </div>
+                        <Link href={'/donate'}>
+                            <div
+                                key={card.tier}
+                                className={`pricing-card ${card.tier}${
+                                    card.tier === selectedTier ? " highlighted" : ""
+                                }`}
+                                onClick={() => {setSelectedTier(card.tier)}}
+                            >
+                                <h3 className="pricing-plan">{card.tier}</h3>
+                                <div className="pricing-amount">£{card.value}</div>
+                                <div className="pricing-period">{option.unit}</div>
+                                <hr className="divider" />
+                                <span>{card.message}</span>
+                                <ul className="features-list">
+                                    {/* {bronzeFeatures.map((feature, index) => (
+                                        <li key={index} className="feature-item">
+                                            ✔️ {feature}
+                                        </li>
+                                    ))} */}
+                                </ul>
+                            </div>
+                        </Link>
                     );
                 })}
                 

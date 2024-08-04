@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import "~/styles/about.css";
 import { api } from "~/trpc/react";
@@ -31,6 +32,12 @@ export const AboutUs: React.FC = () => {
     }
 
     const getInvolved = getInvolvedReq.data;
+
+    const helpLink = {
+        Donate: "/donate",
+        Volunteer: "/contact",
+        Partner: "/partners",
+    };
 
     return (
         <div className="about-us-page">
@@ -77,9 +84,20 @@ export const AboutUs: React.FC = () => {
                 <div className="section__content">
                     {getInvolved.elements.map((el) => (
                         <div className="section__item" key={el.title}>
-                            <span className="section__item-title">
-                                {el.title}:
-                            </span>
+                            <Link
+                                href={
+                                    helpLink[
+                                        el.title as
+                                            | "Donate"
+                                            | "Volunteer"
+                                            | "Partner"
+                                    ]
+                                }
+                            >
+                                <span className="section__item-title">
+                                    {el.title}:
+                                </span>
+                            </Link>
                             <span className="section__item-content">
                                 {el.content}
                             </span>
