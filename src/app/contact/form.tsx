@@ -9,6 +9,7 @@ const ContactForm: React.FC = () => {
         email: '',
         phone: '',
         message: '',
+        volunteer: false, // New field for volunteer option
     });
 
     const [errors, setErrors] = useState({
@@ -53,8 +54,9 @@ const ContactForm: React.FC = () => {
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+        const { name, value, type } = e.target;
+        const ev = type === 'checkbox' ? e as React.ChangeEvent<HTMLInputElement> : null
+        setFormData({ ...formData, [name]: type === 'checkbox' ? ev!.target.checked : value });
     };
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -120,6 +122,18 @@ const ContactForm: React.FC = () => {
                         className={errors.message ? 'error-border' : ''}
                     ></textarea>
                     {errors.message && <p className="error">{errors.message}</p>}
+                </div>
+                <div className="volunteer-option">
+                    <label className="checkbox-label">
+                        <input
+                            type="checkbox"
+                            name="volunteer"
+                            className="checkbox-input"
+                            checked={formData.volunteer}
+                            onChange={handleChange}
+                        />
+                        I am interested in volunteering
+                    </label>
                 </div>
                 <button type="submit" className="send-message-btn">Send Message</button>
             </form>
