@@ -147,9 +147,9 @@ export const Pricing: React.FC = () => {
                 {option?.cards!.map((card) => {
                     console.log(card.tier, selectedTier)
                     return (
-                        <Link href={'/donate'}>
+                        <Link href={'/donate'} key={card.tier}>
                             <div
-                                key={card.tier}
+                               
                                 className={`pricing-card ${card.tier}${
                                     card.tier === selectedTier ? " highlighted" : ""
                                 }`}
