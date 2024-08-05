@@ -68,7 +68,7 @@ const FeedbackForm: React.FC = () => {
                     ></textarea>
                     {errors.message && <p className="error">{errors.message}</p>}
                 </div>
-                <div className="form-group">
+                {/* <div className="form-group">
                     <label>
                         <input
                             type="checkbox"
@@ -78,7 +78,7 @@ const FeedbackForm: React.FC = () => {
                         />
                         Submit anonymously
                     </label>
-                </div>
+                </div> */}
                 <div className="form-group">
                     <div className="rating">
                         {[1, 2, 3, 4, 5].map((star) => (

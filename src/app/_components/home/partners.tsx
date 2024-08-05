@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React from "react";
+import Partner from "~/app/partners/partner";
+import { partnersList } from "~/app/partners/partnersList";
 import "~/styles/home.css";
 
 // export const Partners: React.FC = () => {
@@ -40,11 +42,17 @@ export const Partners: React.FC = () => {
             </Link>
             <div className="partners-logo-container">
                 {/* Replace with actual logo images */}
-                <img src="/path/to/asana-logo.png" alt="Asana" />
-                <img src="/path/to/abstract-logo.png" alt="Abstract" />
-                <img src="/path/to/adobe-logo.png" alt="Adobe" />
-                <img src="/path/to/airtable-logo.png" alt="Airtable" />
-                <img src="/path/to/logitech-logo.png" alt="Logitech" />
+                <div className="partners-list">
+                {partnersList.slice(0, 4).map((partner, index) => (
+                    <Partner 
+                        key={index} 
+                        name={partner.name} 
+                        logo={partner.logo} 
+                        description={partner.description}
+                        url={partner.url} 
+                    />
+                ))}
+            </div>
             </div>
         </div>
     );
