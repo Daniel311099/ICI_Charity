@@ -72,6 +72,42 @@ import logo from "../../assets/Logo.png"
 // };
 
 export const Footer: React.FC = () => {
+
+    const links = [
+        {
+            title: "Donate",
+            url: "/donate"
+        }, 
+        {
+            title: "About Us",
+            url: "/aboutUs"
+        },
+        {
+            title: "Campaigns",
+            url: "/campaigns"
+        },
+        {
+            title: "FAQs",
+            url: "/faqs"
+        },
+        {
+            title: "Terms / Privacy",
+            url: "/"
+        },
+        {
+            title: "Help Center",
+            url: "/"
+        },
+        {
+            title: "Contact Us",
+            url: "/contact"
+        },
+        {
+            title: "Partners",
+            url: "/partners"
+        }
+    ]
+
     return (
         <footer className="footer">
             <div className="footer-container">
@@ -140,20 +176,18 @@ export const Footer: React.FC = () => {
                             <h4>Foundation</h4>
                             <div className="section-full">
                                 <div className="section-half">
-                                    <ul>
-                                        <li>Donate</li>
-                                        <li>About Us</li>
-                                        <li>Impact</li>
-                                        <li>FAQs</li>
-                                    </ul>
+                                    {links.slice(0, 4).map((link, index) => (
+                                        <Link key={index} href={link.url}>
+                                            <p>{link.title}</p>
+                                        </Link>
+                                    ))}
                                 </div>
                                 <div className="section-half">
-                                    <ul>
-                                        <li>Terms / Privacy</li>
-                                        <li>Help Center</li>
-                                        <li>Contact Us</li>
-                                        <li>Partners</li>
-                                    </ul>
+                                    {links.slice(4, 8).map((link, index) => (
+                                        <Link key={index} href={link.url}>
+                                            <p>{link.title}</p>
+                                        </Link>
+                                    ))}
                                 </div>
                             </div>
                         </div>
