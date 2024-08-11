@@ -1,9 +1,9 @@
 import BPF from '~/assets/partners/BPFcharity.png'
 import BHF from '~/assets/partners/Britishheartfoundation.png'
 import MS from '~/assets/partners/MScharity.png'
-import EBJ from '~/assets/partners/evenbreakjobsupport.png'
-import SCC from '~/assets/partners/scopecharity.png'
-import SHC from '~/assets/partners/sheltercharity.png'
+import EBJ from '~/assets/partners/Evenbreakjobsupport.png'
+import SCC from '~/assets/partners/Scopecharity.png'
+import SHC from '~/assets/partners/Sheltercharity.png'
 
 export const partnersList = [
     {
