@@ -10,8 +10,8 @@ import Failure from "./failure";
 // export const runtime = "edge"
 
 const WrappedComingSoon = (): JSX.Element => {
-    const title = "Thank You!"
-    const subheading = "Your donation was successfully processed. We appreciate your generosity!"
+    const title = "Error!"
+    const subheading = "Your donation was not processed successfully."
     return (
         <Layout hero={<Hero title={title} subheading={subheading} />}>
             <Failure/>

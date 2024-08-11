@@ -10,8 +10,8 @@ import Success from "./success";
 // export const runtime = "edge"
 
 const WrappedComingSoon = (): JSX.Element => {
-    const title = "Error!"
-    const subheading = "Your donation was not processed successfully."
+    const title = "Thank You!"
+    const subheading = "Your donation was successfully processed. We appreciate your generosity!"
     return (
         <Layout hero={<Hero title={title} subheading={subheading} />}>
             <Success/>
