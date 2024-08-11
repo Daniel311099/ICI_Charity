@@ -1,186 +1,111 @@
 .footer {
     background-color: #125088;
-    color: #ffffff;
-    padding: 20px 0;
-}
-
-.footer-container {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #faf5e4;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
 }
 
 .footer-content {
-    /* display: flex; */
+    display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.footer-section-top {
-    display: inline-flex;
+    align-items: flex-start;
     width: 100%;
+    max-width: 1200px;
 }
 
-.footer-section-middle {
-    display: inline-flex;
-    width: 100%;
-}
-
-.footer-section {
-    /* flex: 1; */
-    display: inline;
-    min-width: 200px;
-    justify-content: rightr;
-}
-
-.section-full {
-    display: flex;
-}
-
-.section-half {
-    /* display: flex; */
-    margin-left: 50px;
-}
-
-.footer-section h4 {
-    font-family: "Quicksand-SemiBold", Helvetica;
-    font-size: 20px;
-    margin-bottom: 10px;
-    margin-left: 50px;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    font-family: "Quicksand-Medium", Helvetica;
-    font-size: 16px;
-    margin-bottom: 5px;
-}
-
-.footer-section .foundation {
-    position: relative;
-    left: 200px;
-}
-
-.footer-section.subscribe {
-    margin-bottom: 20px;
-    align-items: right;
-    display: inline-flex;
-}
-.subscribe-form {
-    display: flex;
-    border-radius: 5px;
-    background: #faf5e4;
-    padding: 5px;
-}
-
-.subscribe-input {
+.footer-join-us {
+    text-align: left;
     flex: 1;
-    border: none;
-    padding: 10px;
-    font-family: "Quicksand", Helvetica;
-    font-size: 12px;
-    font-weight: 500;
-    width: 200px;
+    margin-right: 40px; /* Add some spacing between the sections */
 }
 
-.subscribe-button {
-    background-color: #125089;
-    color: #faf5e4;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-family: "Quicksand", Helvetica;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-}
-.footer-section.subscribe form {
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-section.subscribe input {
-    padding: 10px;
+.footer-join-us h3 {
+    font-size: 24px;
     margin-bottom: 10px;
-    border-radius: 5px;
-    border: none;
+    margin-top: 0;
 }
 
-.footer-section.subscribe button {
-    padding: 10px;
-    background-color: #faf5e4;
+.footer-join-us p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.join-us-button,
+.subscribe-button {
+    background-color: #f8a000;
     color: #125088;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.footer-section.social .social-icons {
-    display: flex;
-    gap: 10px;
+.join-us-button:hover,
+.subscribe-button:hover {
+    background-color: #e89500;
 }
 
-.footer-bottom {
+.newsletter {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
     gap: 10px;
     margin-top: 20px;
 }
 
-.footer-bottom p {
-    font-family: "Quicksand-SemiBold", Helvetica;
-    font-size: 14px;
+.newsletter input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    flex: 1;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px; /* Adjusted gap to bring the links closer together */
+    text-align: right;
+    flex: 1;
+}
+
+.footer-column {
+    flex: 1;
+    max-width: 150px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
 }
 
-.footer-bottom .payment-methods {
-    display: flex;
-    gap: 10px;
+.footer-column li {
+    margin-bottom: 8px; /* Reduced margin to bring the links closer together */
 }
 
-/* Icon styles */
-.icon {
-    width: 24px;
-    height: 24px;
-    background-size: cover;
+.footer-column a {
+    text-decoration: none;
+    color: #faf5e4;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-.icon.youtube {
-    background-image: url("../assets/Youtube.png");
-}
-.icon.facebook {
-    background-image: url("../assets/Facebook.png");
-}
-.icon.twitter {
-    background-image: url("../assets/Twitter.png");
-}
-.icon.instagram {
-    background-image: url("../assets/Instagram.png");
-}
-.icon.linkedin {
-    background-image: url("../assets/Linkedin.png");
+.footer-column a:hover {
+    color: #d9d9d9;
 }
 
-/* .icon.stripe {
-    background-image: url("path/to/stripe-icon.png");
+.footer-divider {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #faf5e4;
+    margin: 20px 0;
 }
-.icon.visa {
-    background-image: url("path/to/visa-icon.png");
+
+.footer-bottom {
+    width: 100%;
+    text-align: left;
+    flex: 1;
+    max-width: 1200px;
 }
-.icon.paypal {
-    background-image: url("path/to/paypal-icon.png");
-}
-.icon.amex {
-    background-image: url("path/to/amex-icon.png");
-}
-.icon.mastercard {
-    background-image: url("path/to/mastercard-icon.png");
-} */
