@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "~/styles/campaigns.css"; // Create a CSS file for custom styles
 import Access from "~/assets/Access.png" 
+import IssuesWithAccessRightsatAirports from "~/assets/IssuesWithAccessRightsatAirports.png"
 
 interface Campaign {
     id: string;
@@ -27,20 +28,16 @@ const mockCampaigns: Campaign[] = [
     },
     {
         id: "2",
-        title: "Campaign 2",
-        description: "Description of Campaign 2",
-        imageUrl: "https://via.placeholder.com/150",
+        title: "Issues With Access Rights at Airports",
+        description: `
+        Equal Access for All: Ensuring Dignity and Independence for Disabled Travelers at Airports and Onboard Aircraft. 
+        
+        #AccessibleAirports
+        `,
+        imageUrl: IssuesWithAccessRightsatAirports.src,
         link: "/campaigns/2",
-        category: "Health"
-    },
-    {
-        id: "3",
-        title: "Campaign 3",
-        description: "Description of Campaign 3",
-        imageUrl: "https://via.placeholder.com/150",
-        link: "/campaigns/3",
-        category: "Education"
-    },
+        category: "Community"
+    }
 ];
 
 const fetchCampaigns = (): Promise<Campaign[]> => {
