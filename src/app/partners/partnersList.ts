@@ -9,7 +9,7 @@ export const partnersList = [
     {
         name: 'BPF Charity',
         logo: BPF.src,
-        description: 'BPF is a charity that helps people with disabilities to find work.',
+        description: 'BPF is a charity that supports people with Polio myelitis.',
         url: '/partners'
     },
     {
