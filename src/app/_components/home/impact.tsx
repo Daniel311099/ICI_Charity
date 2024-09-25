@@ -9,7 +9,7 @@ import MentorshipSymbol from "~/assets/graphics/mentorship_symbol.png";
 import ResearchDevelopmentSymbol from "~/assets/graphics/Research_Development_symbol.png";
 
 
-let icons = {
+const icons = {
     "Advocacy & Awareness": AdvocacyAwarenessSymbol.src,
     "Community Engagement": CommunityEngagementSymbol.src,
     "Education & Training": EducationTrainingSymbol.src,
