@@ -9,14 +9,14 @@ import MentorshipSymbol from "~/assets/graphics/mentorship_symbol.png";
 import ResearchDevelopmentSymbol from "~/assets/graphics/Research_Development_symbol.png";
 
 
-const icons = {
+let icons = {
     "Advocacy & Awareness": AdvocacyAwarenessSymbol.src,
     "Community Engagement": CommunityEngagementSymbol.src,
     "Education & Training": EducationTrainingSymbol.src,
     "Support Services": SupportServicesSymbol.src,
     "Mentorship": MentorshipSymbol.src,
     "Research & Development": ResearchDevelopmentSymbol.src,
-};
+} as { [key: string]: string };
 
 
 export const Impact: React.FC = () => {
