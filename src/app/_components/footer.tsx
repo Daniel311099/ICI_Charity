@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import "~/styles/footer.css";
 
@@ -26,7 +27,7 @@ export const Footer = () => {
                 <div className="footer-join-us">
                     <h3>Join Us</h3>
                     <p>Become a part of our community and help make a difference.</p>
-                    <button className="join-us-button">Get Involved</button>
+                    <Link href={"/contact"}><button className="join-us-button">Get Involved</button></Link>
                     <div className="newsletter">
                         <input type="email" placeholder="Subscribe to our newsletter" />
                         <button className="subscribe-button">Subscribe</button>
