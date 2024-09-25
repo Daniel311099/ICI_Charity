@@ -14,7 +14,7 @@ const icons = {
     "Community Engagement": CommunityEngagementSymbol.src,
     "Education & Training": EducationTrainingSymbol.src,
     "Support Services": SupportServicesSymbol.src,
-    "Mentorship": MentorshipSymbol.src,
+    "Mentorship Programs": MentorshipSymbol.src,
     "Research & Development": ResearchDevelopmentSymbol.src,
 } as { [key: string]: string };
 
