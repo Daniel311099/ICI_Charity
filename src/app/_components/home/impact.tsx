@@ -2,8 +2,8 @@
 import React from "react";
 import { api } from "~/trpc/react";
 import AdvocacyAwarenessSymbol from "~/assets/graphics/Advocacy_Awareness_symbol.png";
-import CommunityEngagementSymbol from "~/assets/graphics/Community_Engagement_symbole.png";
-import EducationTrainingSymbol from "~/assets/graphics/Education_Training_symbol.png";
+import CommunityEngagementSymbol from "~/assets/graphics/Community_Engagement_symbol.png";
+import EducationTrainingSymbol from "~/assets/graphics/Education_Training_symbole.png";
 import SupportServicesSymbol from "~/assets/graphics/Support_Services_symbol.png";
 import MentorshipSymbol from "~/assets/graphics/mentorship_symbol.png";
 import ResearchDevelopmentSymbol from "~/assets/graphics/Research_Development_symbol.png";
