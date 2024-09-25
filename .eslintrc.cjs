@@ -27,6 +27,7 @@ const config = {
     '@typescript-eslint/consistent-type-imports': 'off',
     '@typescript-eslint/no-unsafe-argument': 'off',
     '@next/next/no-img-element': 'off',
+    '@typescript-eslint/consistent-indexed-object-style': 'off',
  
     // "@typescript-eslint/consistent-type-imports": [
     //   "warn",
