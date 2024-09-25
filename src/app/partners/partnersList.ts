@@ -25,21 +25,21 @@ export const partnersList = [
         url: '/partners'
     },
     {
-        name: 'Evenbreak Job Support',
-        logo: EBJ.src,
-        description: 'Evenbreak is a job board for disabled people.',
+        name: 'Shelter Charity',
+        logo: SHC.src,
+        description: 'Shelter provides advice and support to people who need a home in England, Scotland, Wales and Northern Ireland.',
         url: '/partners'
     },
+    // {
+    //     name: 'Evenbreak Job Support',
+    //     logo: EBJ.src,
+    //     description: 'Evenbreak is a job board for disabled people.',
+    //     url: '/partners'
+    // },
     {
         name: 'Scope Charity',
         logo: SCC.src,
         description: 'Scope is a charity that helps people with disabilities to live independently.',
-        url: '/partners'
-    },
-    {
-        name: 'Shelter Charity',
-        logo: SHC.src,
-        description: 'Shelter is a charity that helps people who are homeless.',
         url: '/partners'
     }
 ];

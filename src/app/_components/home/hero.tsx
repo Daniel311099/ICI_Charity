@@ -35,6 +35,7 @@ export const Hero: React.FC = () => {
         <div className="hero-wrap">
             {/* <h1 className="logo-text">Icon House International</h1> */}
             <Title />
+            <h3 className="subheading">Empowering Inclusive Futures</h3>
             <div className="hero home-hero">
                 <div>
                     <p className="heading">Join Us In Making A Difference</p>
