@@ -16,8 +16,7 @@ const links = [
     { name: "Feedback", url: "/feedback" },
 ];
 
-
-function StandardHeader ({ children }: { children: React.ReactNode }) {
+function StandardHeader({ children }: { children: React.ReactNode }) {
     // return (
     //   <div className="header-container">
     //     <div className="logo-container">
@@ -40,7 +39,7 @@ function StandardHeader ({ children }: { children: React.ReactNode }) {
     //     </nav>
     //     {children}
     //   </div>
-      
+
     // );
 
     const navHeight = 60; // Adjust based on your nav bar height
@@ -67,46 +66,48 @@ function StandardHeader ({ children }: { children: React.ReactNode }) {
             {/* <Filler navHeight={navHeight} heroHeight={heroHeight} /> */}
             {children}
         </div>
-    )
-  };
-  function MobileHeader ({ children }: { children: React.ReactNode }) {
+    );
+}
+function MobileHeader({ children }: { children: React.ReactNode }) {
     const [menuOpen, setMenuOpen] = useState(false);
-  
+
     return (
-      <div className="mobile-header-container">
-        <div className="mobile-logo-container">
-          <Link href="/">
-            <img src="/logo.png" alt="Charity Logo" className="logo" />
-          </Link>
-          <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-            <span className="menu-icon">{menuOpen ? '✖' : '☰'}</span>
-          </div>
-        </div>
-        {menuOpen && (
-          <div className="mobile-nav-menu">
-            {links.map((link) => (
-              <Link
-                key={link.url}
-                href={link.url}
-                className="mobile-nav-link"
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <AuthButtons />
-            {/* <div className="mobile-auth-buttons">
+        <div className="mobile-header-container">
+            <div className="mobile-logo-container">
+                <Link href="/">
+                    <img src="/logo.png" alt="Charity Logo" className="logo" />
+                </Link>
+                <div
+                    className="menu-toggle"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                >
+                    <span className="menu-icon">{menuOpen ? "✖" : "☰"}</span>
+                </div>
+            </div>
+            {menuOpen && (
+                <div className="mobile-nav-menu">
+                    {links.map((link) => (
+                        <Link
+                            key={link.url}
+                            href={link.url}
+                            className="mobile-nav-link"
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
+                    <AuthButtons />
+                    {/* <div className="mobile-auth-buttons">
               <div className="button-frame login-frame">Login</div>
               <div className="button-frame signup-frame">Signup</div>
             </div> */}
-          </div>
-        )}
-        {children}
-      </div>
+                </div>
+            )}
+            {children}
+        </div>
     );
-  };
+}
 // export function Header({ children }: { children: React.ReactNode }) {
-
 
 //     // children is the hero
 
@@ -139,24 +140,28 @@ function StandardHeader ({ children }: { children: React.ReactNode }) {
 
 export function Header({ children }: { children: React.ReactNode }) {
     const [isMobile, setIsMobile] = useState(false);
-  
+
     // Check screen size on component mount and window resize
     useEffect(() => {
-      const checkScreenSize = () => {
-        setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as needed
-      };
-  
-      checkScreenSize();
-      window.addEventListener('resize', checkScreenSize);
-  
-      return () => {
-        window.removeEventListener('resize', checkScreenSize);
-      };
+        const checkScreenSize = () => {
+            setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as needed
+        };
+
+        checkScreenSize();
+        window.addEventListener("resize", checkScreenSize);
+
+        return () => {
+            window.removeEventListener("resize", checkScreenSize);
+        };
     }, []);
-  
-    return isMobile ? <MobileHeader children={children} /> : <StandardHeader children={children} />;
-  };
-  
+
+    return isMobile ? (
+        <MobileHeader>{children}</MobileHeader>
+    ) : (
+        <StandardHeader>{children}</StandardHeader>
+    );
+}
+
 function AuthButtons() {
     const { data: session, status } = useSession();
     return (
@@ -179,7 +184,10 @@ function AuthButtons() {
                     >
                         <div className="text-content">Login</div>
                     </Link>
-                    <Link href="/lo/api/auth/signin" className="button-frame signup-frame">
+                    <Link
+                        href="/lo/api/auth/signin"
+                        className="button-frame signup-frame"
+                    >
                         <div className="text-content">Signup</div>
                     </Link>
                 </>
