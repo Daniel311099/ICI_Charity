@@ -74,9 +74,9 @@ function MobileHeader({ children }: { children: React.ReactNode }) {
     return (
         <div className="mobile-header-container">
             <div className="mobile-logo-container">
-                <Link href="/">
-                    <img src="/logo.png" alt="Charity Logo" className="logo" />
-                </Link>
+            <Link href={"/"}>
+                            <img src={logo.src} alt="Logo" className="logo" />
+                        </Link>
                 <div
                     className="menu-toggle"
                     onClick={() => setMenuOpen(!menuOpen)}

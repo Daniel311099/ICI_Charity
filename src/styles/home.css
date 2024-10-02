@@ -535,7 +535,7 @@
 @media (max-width: 768px) {
     /* General Styles */
     .about-us, .partners-section, .charity-landing-page, .pricing-section, .review {
-        padding: 20px 10px;
+        /* padding: 20px 10px; */
     }
 
     /* About Us Section */
@@ -679,7 +679,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     /* For Extra Small Devices */
     .about-us__header h2, .partners-title, .text-wrapper-22, .pricing-title, .section-title {
         font-size: 24px;

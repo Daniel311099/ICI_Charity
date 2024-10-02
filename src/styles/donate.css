@@ -316,4 +316,8 @@
     .cancel-button {
         margin-bottom: 10px;
     }
+
+    .donation-frequency .radio-label {
+        flex-direction: column;
+    }
 }

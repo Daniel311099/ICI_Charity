@@ -111,3 +111,39 @@
     background-color: #125088;
     color: #fff;
 }
+
+
+@media (max-width: 768px) {
+    .campaigns-page {
+        padding: 20px;
+    }
+
+    .filters {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .campaigns-list {
+        gap: 20px;
+    }
+
+    .campaign-card {
+        flex-direction: column;
+    }
+
+    .campaign-image-container {
+        padding: 0;
+    }
+
+    .campaign-image {
+        border-radius: 12px 12px 0 0;
+    }
+
+    .campaign-details {
+        padding: 20px;
+    }
+
+    .campaign-details-reverse {
+        text-align: left;
+    }
+}
