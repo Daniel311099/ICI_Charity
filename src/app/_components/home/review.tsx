@@ -58,7 +58,7 @@ const testimonials = [
     },
     {
         id: 3,
-        name: 'Gary Skyner',
+        name: 'Joy',
         content: 'Icon House International is one of a kind. Thank you for lending a hand.',
         date: new Date('2024-04-25'),
         rating: 5,
