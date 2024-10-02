@@ -10,7 +10,7 @@ import { Hero } from "../_components/hero";
 
 const WrappedComingSoon = (): JSX.Element => {
     const title = "Icon House International"
-    const subheading = "Together, We Can Create a Brighter Future for Communities in Need"
+    const subheading = "Empowering Inclusive Futures"
     return (
         <Layout hero={<Hero title={title} subheading={subheading} />}>
             <AboutUs />

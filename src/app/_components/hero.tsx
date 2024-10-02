@@ -14,8 +14,8 @@ export const Hero: React.FC<props> = ({title, subheading}) => {
             <div className="hero">
                 <div>
                     {
-                        title === "Icon House International" ?
-                        <Title /> :
+                        // title === "Icon House International" ?
+                        // <Title /> :
                     <p className="heading">{title}</p>
                     }
                     <p className="subheading">
