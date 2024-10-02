@@ -140,3 +140,21 @@
 .rating .star.selected {
     color: #125088; /* Change this color to indicate the selected star */
 }
+
+
+
+@media (max-width: 768px) {
+    .feedback-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .feedback-info {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .feedback-form {
+        max-width: 100%;
+    }
+}

@@ -279,3 +279,41 @@
     margin-bottom: 10px;
     text-align: center;
 }
+
+
+
+@media (max-width : 768px) {
+    .donate-page {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .donate-intro {
+        width: 100%;
+    }
+
+    .donate-right {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .donate-form {
+        padding: 10px;
+    }
+
+    .currency-selector {
+        flex-direction: row;
+    }
+
+    .currency-select {
+        margin-right: 10px;
+    }
+
+    .donate-buttons {
+        flex-direction: column;
+    }
+
+    .cancel-button {
+        margin-bottom: 10px;
+    }
+}

@@ -136,3 +136,16 @@
     max-width: 50%;
     margin-bottom: 30px;
 }
+
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .contact-info,
+    .contact-form {
+        max-width: 100%;
+    }
+}

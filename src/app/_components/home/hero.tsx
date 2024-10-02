@@ -35,8 +35,8 @@ export const Hero: React.FC = () => {
         <div className="hero-wrap">
             {/* <h1 className="logo-text">Icon House International</h1> */}
             <Title />
-            <h3 className="subheading">Empowering Inclusive Futures</h3>
             <div className="hero home-hero">
+               
                 <div>
                     <p className="heading">Join Us In Making A Difference</p>
                     <p className="subheading">
@@ -67,15 +67,19 @@ export const Hero: React.FC = () => {
 export function Title() {
     const title = "Icon House International";
     return (
-        <h1 className="logo-text">
-            {title.split(" ").map((word) => {
-                return (
-                    <>
-                        <span className="red-letter">{word[0]}</span>
-                        {word.slice(1)}&nbsp;
-                    </>
-                );
-            })}
-        </h1>
+        <div className="title">
+            <h1 >
+                {title.split(" ").map((word) => {
+                    return (
+                        <>
+                            <span className="red-letter">{word[0]}</span>
+                            {word.slice(1)}&nbsp;
+                        </>
+                    );
+                })}
+            </h1>
+            
+            <h3 className="subheading">Empowering Inclusive Futures</h3>
+        </div>
     );
 }

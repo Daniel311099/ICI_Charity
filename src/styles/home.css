@@ -528,3 +528,185 @@
 .charity-landing-page .faq-arrow[alt="Arrow up"] {
     transform: rotate(180deg);
 }
+
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    /* General Styles */
+    .about-us, .partners-section, .charity-landing-page, .pricing-section, .review {
+        padding: 20px 10px;
+    }
+
+    /* About Us Section */
+    .about-us__header h2 {
+        font-size: 28px;
+    }
+
+    .about-us__content {
+        font-size: 14px;
+    }
+
+    /* Partners Section */
+    .partners-title {
+        font-size: 28px;
+    }
+
+    .partners-subtitle {
+        font-size: 14px;
+    }
+
+    .partners-logo-container {
+        gap: 20px;
+    }
+
+    /* Impact Cards */
+    .group-27 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .impact-card {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    /* Stats Section */
+    .stats-section {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .stats-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .stats-card-value {
+        font-size: 30px;
+    }
+
+    /* Pricing Section */
+    .pricing-cards {
+        flex-direction: column;
+    }
+
+    .pricing-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Testimonial Section */
+    .testimonial-card {
+        padding: 15px;
+    }
+
+    .testimonial-header h3 {
+        font-size: 18px;
+    }
+
+    .testimonial-header p, .testimonial-text, .testimonial-date {
+        font-size: 14px;
+    }
+
+    /* FAQ Section */
+    .charity-landing-page .faq-item {
+        padding: 15px;
+    }
+
+    .charity-landing-page .faq-question {
+        font-size: 18px;
+    }
+
+    .charity-landing-page .faq-answer {
+        font-size: 14px;
+    }
+
+    /* Hero Section */
+    .hero {
+        /* height: 50vh; */
+        padding-left: 0;
+    }
+
+    .hero .heading {
+        font-size: 36px;
+    }
+
+    .hero .subheading {
+        font-size: 16px;
+    }
+
+    .hero .buttons {
+        gap: 20px;
+    }
+
+    /* Adjust buttons */
+    .hero .primary-button, .hero .secondary-button, .partners-button-container {
+        padding: 15px 25px;
+        font-size: 18px;
+    }
+
+    /* Navigation Styles */
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    .navbar-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar-menu a {
+        margin-bottom: 10px;
+    }
+
+    /* Footer Styles */
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links ul {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    /* For Extra Small Devices */
+    .about-us__header h2, .partners-title, .text-wrapper-22, .pricing-title, .section-title {
+        font-size: 24px;
+    }
+
+    .about-us__content, .partners-subtitle, .testimonial-text, .faq-question, .faq-answer {
+        font-size: 12px;
+    }
+
+    .partners-button-container, .hero .primary-button, .hero .secondary-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .faq-title {
+        font-size: 24px;
+    }
+
+    .faq-item {
+        padding: 10px;
+    }
+
+    .testimonial-card {
+        max-width: 90%;
+    }
+
+    .stats-card, .impact-card, .pricing-card {
+        width: 90%;
+    }
+}
