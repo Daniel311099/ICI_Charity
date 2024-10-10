@@ -14,11 +14,13 @@ export const generalRouter = createTRPCRouter({
             name: z.string(),
             email: z.string().email(),
             message: z.string(),
+            phone: z.string(),
+            volunteer: z.boolean()
         }))
         .mutation(async ({ input }) => {
-            const { name, email, message } = input;
+            const { name, email, message, phone, volunteer } = input;
             try {
-                await sendContactEmail(name, email, message);
+                await sendContactEmail(name, phone, email, message, volunteer);
                 return { success: true };
             } catch (error) {
                 console.error('Failed to send email:', error);

@@ -26,7 +26,7 @@ export const Home: React.FC = () => {
         <Partners />  
         <div className="overlap-4">
           <Impact />
-          <Stats />
+          {/* <Stats /> */}
           <Pricing />
           <Review />
           <FAQ n={3}/>

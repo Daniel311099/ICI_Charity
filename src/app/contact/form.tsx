@@ -1,6 +1,7 @@
 "use client"
 // src/components/ContactForm.tsx
 import React, { useState } from 'react';
+import { api } from '~/trpc/react';
 
 const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -58,17 +59,25 @@ const ContactForm: React.FC = () => {
         const ev = type === 'checkbox' ? e as React.ChangeEvent<HTMLInputElement> : null
         setFormData({ ...formData, [name]: type === 'checkbox' ? ev!.target.checked : value });
     };
-
+    const mut = api.general.sendContactEmail.useMutation()
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (validate()) {
             // alert('Message sent!');
             // handle actual form submission here
+         
+            mut.mutateAsync({
+                message: formData.message,
+                name: formData.firstName + ' ' + formData.lastName,
+                email: formData.email,
+                phone: formData.phone,
+                volunteer: formData.volunteer
+            })
             console.log({formData})
         }
     };
 
-    return (
+    return (    
         <div className="contact-form">
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
