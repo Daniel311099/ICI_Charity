@@ -320,4 +320,9 @@
     .donation-frequency .radio-label {
         flex-direction: column;
     }
+
+    .checkout-button {
+        z-index: 1000; 
+        pointer-events: auto; 
+    }
 }
